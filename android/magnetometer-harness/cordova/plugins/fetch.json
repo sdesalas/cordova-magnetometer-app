@@ -1,0 +1,52 @@
+{
+    "cordova-plugin-vibration": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-vibration",
+            "subdir": "."
+        }
+    },
+    "cordova-plugin-device-orientation": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-device-orientation",
+            "subdir": "."
+        }
+    },
+    "com.mrameezraja.plugins.magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    },
+    "com.cordova.plugins.magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    },
+    "cordova.plugins.magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    },
+    "org.apache.cordova.plugins.magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    },
+    "org.apache.cordova.magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    },
+    "cordova-plugin-magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "..\\..\\..\\cordova-plugin-magnetometer"
+        }
+    }
+}

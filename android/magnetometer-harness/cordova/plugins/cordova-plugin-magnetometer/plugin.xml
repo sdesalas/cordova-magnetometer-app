@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-magnetometer"
+  version="1.0.0">
+
+    <name>Cordova Magnetometer Plugin</name>
+    <author>Steven de Salas / Rameez Raja</author>
+    <description>Magnetic Interference detector Plugin</description>
+    <license>MIT</license>
+    
+    <js-module src="www/magnetometer.js" name="main">
+        <clobbers target="cordova.plugins.magnetometer" />
+    </js-module>
+
+   <!-- ios -->
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+          <feature name="Magnetometer">
+              <param name="ios-package" value="Magnetometer"/>
+          </feature>
+      </config-file>
+
+      <header-file src="src/ios/Magnetometer.h" />
+      <source-file src="src/ios/Magnetometer.m" />
+
+      <!--<framework src="CoreLocation.framework" weak="true" />
+      <framework src="MobileCoreServices.framework" weak="true" />
+      <framework src="CoreGraphics.framework" />-->
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="Magnetometer">
+              <param name="android-package" value="org.apache.cordova.magnetometer.Magnetometer"/>
+          </feature>
+      </config-file>
+
+      <config-file target="AndroidManifest.xml" parent="/*">
+          <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+
+      <source-file src="src/android/Magnetometer.java" target-dir="src/org/apache/cordova/magnetometer" />
+    </platform>
+
+</plugin>
