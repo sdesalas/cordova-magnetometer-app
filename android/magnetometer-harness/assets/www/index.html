@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <!-- JS dependencies 
     <script src="libs/jquery/jquery.1.9.1.min.js"></script>-->
-    <script src="libs/one-color.js"></script>
 
     <title>Magnetometer</title>
 
@@ -32,7 +31,7 @@
     <script>(function() {
 
 
-// DOM Elements _____________________________________________
+// Initialise vars _____________________________________________
 
 var uT = document.getElementById('uT');
 var xyz = document.getElementById('xyz');
@@ -64,7 +63,7 @@ function getXYBackground(x, y) {
     return '-webkit-linear-gradient(' + direction + 'deg, ' + blue + ' 0%,' + transparent + ' ' + range + '%,' + transparent + ' ' + (100 - range) + '%, ' + red + ' 100%)';
 }
 
-function display() {
+function displayReadings() {
     
     // RUN CALCULATIONS
     var reading = lastReading;
@@ -112,7 +111,8 @@ function watchMagnetometer() {
                 console.log(err);
             }
         );
-        intervalID = window.setInterval(display, 100);
+        // Refresh display every 0.1 secs.
+        intervalID = window.setInterval(displayReadings, 100);
     } else {
         console.log('No magnetometer plugin!!');
         console.log('cordova = ' + !!window.cordova);
