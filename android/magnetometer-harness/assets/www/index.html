@@ -43,7 +43,7 @@ var intervalID = 0;
 
 // Helper functions __________________________________________
 
-function getMagnitudeBackground(val) {
+function getBackground(val) {
     var r = 0, g = 0, b = 0;
     if (val < -50) b = 100;
     else if (val < 0) b = Math.abs(val) * 2;
@@ -54,25 +54,6 @@ function getMagnitudeBackground(val) {
     return 'rgb(' + r + '%, ' + g +'%, ' + b + '%)';
 }
 
-function getBackground(val) {
-    var r = 0, g = 0, b = 0;
-    if (val < -50) r = 100;
-    else if (val < 0) r = Math.abs(val) * 2;
-    if (val > 50) b = 100;
-    else if (val > 0) b = Math.abs(val) * 2;
-    if (val > -50 && val < 50) g = 100;
-    else g = (100 - Math.abs(val)) * 2  ;
-    return 'rgb(' + r + '%, ' + g +'%, ' + b + '%)';
-}
-
-function getAxisBackground(val, isVertical) {
-    var range = Math.abs(val) > 100 ? 50 : Math.abs(val) / 2;
-    var red = 'rgba(0,0,255,1)', blue = 'rgba(255,0,0,1)', transparent = 'rgba(255,255,255,0)';
-    if (isVertical) direction = (val > 0) ? 'bottom' : 'top';
-    else direction = (val > 0) ? 'left' : 'right' ;
-    return '-webkit-linear-gradient(' + direction + ', ' + blue + ' 0%,' + transparent + ' ' + range + '%,' + transparent + ' ' + (100 - range) + '%, ' + red + ' 100%)';
-}
-
 function getXYBackground(x, y) {
     var red = 'rgba(0,0,255,1)', 
         blue = 'rgba(255,0,0,1)', 
@@ -80,7 +61,7 @@ function getXYBackground(x, y) {
         strength = Math.sqrt(x*x*3 + y*y*3);
     var direction = Math.round((Math.atan2(y,x)*180 / Math.PI) + 180);
     var range = (strength > 100) ? 50 : Math.abs(strength) / 2;
-    return '-webkit-linear-gradient(' + direction + 'deg, ' + red + ' 0%,' + transparent + ' ' + range + '%,' + transparent + ' ' + (100 - range) + '%, ' + blue + ' 100%)';
+    return '-webkit-linear-gradient(' + direction + 'deg, ' + blue + ' 0%,' + transparent + ' ' + range + '%,' + transparent + ' ' + (100 - range) + '%, ' + red + ' 100%)';
 }
 
 function display() {
