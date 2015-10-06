@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>979CE4F9-5839-4D1A-973F-5BE21B9E151B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>magnetometer-harness</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA19AEF617EC584195C65D35CC987F27BFC33EFC</key>
+		<string>https://github.com/sdesalas/cordova-magnetometer-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/magnetometer-harness/magnetometer-harness.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA19AEF617EC584195C65D35CC987F27BFC33EFC</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sdesalas/cordova-magnetometer-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA19AEF617EC584195C65D35CC987F27BFC33EFC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA19AEF617EC584195C65D35CC987F27BFC33EFC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cordova-magnetometer-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>

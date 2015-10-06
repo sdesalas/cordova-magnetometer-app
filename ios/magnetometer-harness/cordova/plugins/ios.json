@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Magnetometer\"><param name=\"ios-package\" value=\"Magnetometer\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.desalasworks.magnetometerharness"
+        },
+        "cordova-plugin-magnetometer": {
+            "PACKAGE_NAME": "com.desalasworks.magnetometerharness"
+        }
+    },
+    "dependent_plugins": {}
+}

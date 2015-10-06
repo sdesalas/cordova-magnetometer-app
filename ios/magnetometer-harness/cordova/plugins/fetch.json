@@ -1,0 +1,18 @@
+{
+    "cordova-plugin-vibration": {
+        "source": {
+            "type": "local",
+            "path": "../../cordova-plugin-vibration-r1.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-magnetometer": {
+        "source": {
+            "type": "local",
+            "path": "../../cordova-plugin-magnetometer-master"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
