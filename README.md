@@ -7,6 +7,7 @@ A Cordova Magnetometer app used as test harness for the [Cordova Magnetometer Pl
 Download:
 
 - [Android 1.0.0](https://github.com/sdesalas/cordova-magnetometer-app/raw/master/deploy/android/1.0.0/cordova-magnetometer-app.apk)
+- [iPhone/iPad 1.0.0 - (Use iTunes to install)](https://github.com/sdesalas/cordova-magnetometer-app/raw/master/deploy/ios/1.0.0/cordova-magnetometer-app.ipa)
 
 Features:
 
