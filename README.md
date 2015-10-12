@@ -1,8 +1,8 @@
 # cordova-magnetometer-app
 
-A Cordova Magnetometer app used as test harness for the [Cordova Magnetometer Plugin](https://github.com/sdesalas/cordova-plugin-magnetometer).
+![Cordova Magnetometer App](https://raw.githubusercontent.com/sdesalas/cordova-magnetometer-app/master/design/article/coin-detector-xplatform.jpg)
 
-![Screenshots](https://raw.githubusercontent.com/sdesalas/cordova-magnetometer-app/master/design/screenshots/CoinDetector.jpg)
+A Cordova Magnetometer app used as test harness for the [Cordova Magnetometer Plugin](https://github.com/sdesalas/cordova-plugin-magnetometer).
 
 Download:
 
