@@ -2,3 +2,6 @@ android/magnetometer-harness/.idea/
 android/magnetometer-harness/.gradle/
 android/magnetometer-harness/CordovaLib/build/
 backup/android/magnetometer-harness/.idea/
+platforms/android/.gradle/
+platforms/android/.idea
+platforms/android/CordovaLib/build/
