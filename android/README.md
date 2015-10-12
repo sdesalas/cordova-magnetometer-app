@@ -5,9 +5,9 @@ How to Build the Android App
 
 What You'll need:
 
-1. A PC or Mac with NodeJS, Java (JDK7) and Android Studio installed.
-2. An Android (4.0+) device and USB cable for testing.
-3. Basic understanding of a command line interface (you can navigate between folders).
+1) A PC or Mac with NodeJS, Java (JDK7) and Android Studio installed.
+2) An Android (4.0+) device and USB cable for testing.
+3) Basic understanding of a command line interface (you can navigate between folders).
 
 CORPORATE FIREWALLS: Note that the steps below may not work behind a corporate firewall, you may need extra steps to set up internet access via a corporate proxy.
 
@@ -69,12 +69,12 @@ Next we are going to 'build' the app, so you can use it on your android phone. W
 
 Then follow these instructions:
 
-1. Open Android Studio
-2. On the Welcome Prompt. Select 'Import Project'
-3. Click on the 'platforms\android' folder inside your project.
-4. Press 'OK'.
-5. Press 'OK' again if you get an extra prompt about Gradle settings.
-6. Wait for the progress bar to finish.
+ 1) Open Android Studio
+ 2) On the Welcome Prompt. Select 'Import Project'
+ 3) Click on the 'platforms\android' folder inside your project.
+ 4) Press 'OK'.
+ 5) Press 'OK' again if you get an extra prompt about Gradle settings.
+ 6) Wait for the progress bar to finish.
 
 [image of android studio welcome]
 
@@ -84,31 +84,31 @@ This will create an android project, next we will build the APK file that can be
 
 Make sure you've waited until all the progress bars are finished before the next steps.
 
-1. Android Studio will want to get all required Java libraries that the project depends on. Wait until all progress bars are finished and the project files are ready.
-2. Click on the 'Play' button at the top menu as per screen below. 
-3. This will trigger a build using Gradle. You can see the progress on the 'Gradle Console' window.
-4. When ready, a popup will appear asking if you want to run the emulator. DO NOT press OK here. It will grind your computer to a halt. Just press 'Cancel' on the popup.
+ 1) Android Studio will want to get all required Java libraries that the project depends on. Wait until all progress bars are finished and the project files are ready.
+ 2) Click on the 'Play' button at the top menu as per screen below. 
+ 3) This will trigger a build using Gradle. You can see the progress on the 'Gradle Console' window.
+ 4) When ready, a popup will appear asking if you want to run the emulator. DO NOT press OK here. It will grind your computer to a halt. Just press 'Cancel' on the popup.
  
 [image of android studio build]
 
 Next we are going to email ourselves the completed app.
 
-1. Navigate to your 'magnetometer' project folder using the file explorer.
-2. Click 'platforms' -> 'android' -> 'build' -> 'outputs' -> 'apk'
-3. Find the file 'android-debug.apk'
+ 1) Navigate to your 'magnetometer' project folder using the file explorer.
+ 2) Click 'platforms' -> 'android' -> 'build' -> 'outputs' -> 'apk'
+ 3) Find the file 'android-debug.apk'
  
 [image of apk export dir]
 
-4. Next. Email it to yourself.
-5. Go to your Android phone.
-6. Open 'Settings' > 'Security'
-7. Turn ON 'Unknown Sources' (you can turn it back OFF later)
-8. Open your email, click on the attached 'APK' file.
-9. You should then get an installation screen as per below.
+ 4) Next. Email it to yourself.
+ 5) Go to your Android phone.
+ 6) Open 'Settings' > 'Security'
+ 7) Turn ON 'Unknown Sources' (you can turn it back OFF later)
+ 8) Open your email, click on the attached 'APK' file.
+ 9) You should then get an installation screen as per below.
 
 [image of android install]
 
-10. Go to your Apps and look for 'magnetometer', then open it.
-11. READY! Start finding some metal objects!
+ 10) Go to your Apps and look for 'magnetometer', then open it.
+ 11) READY! Start finding some metal objects!
 
 [image of metal detector]
