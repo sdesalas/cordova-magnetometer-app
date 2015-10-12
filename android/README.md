@@ -26,15 +26,19 @@ Step 1. Create your Project with Cordova
 
 Open up a command line window, navigate to your projects folder and type :
 
-> &gt; npm install -g cordova
+```
+> npm install -g cordova
+```
 
 [image of cordova install]
 
 Next, navigate to your projects folder and create a new cordova project with android support:
 
-> &gt; cordova create magnetometer my.magnetometer magnetometer
-> &gt; cd magnetometer
-> &gt; cordova platform add android
+```
+> cordova create magnetometer my.magnetometer magnetometer
+> cd magnetometer
+> cordova platform add android
+```
 
 [image of cordova project creation]
 
@@ -48,14 +52,18 @@ The folder 'www' contains our web code. Here is where we'll be placing the index
 
 Go back to the command line and run an extra couple of commands to 'unlock' the vibration and magnetometer functionality on your phone.
 
-> &gt; cordova plugin add cordova-plugin-vibration
-> &gt; cordova plugin add cordova-plugin-magnetometer
+```
+> cordova plugin add cordova-plugin-vibration
+> cordova plugin add cordova-plugin-magnetometer
+```
 
 [image of plugin additions cmd]
 
 Next we are going to 'build' the app, so you can use it on your android phone. We need one more cordova command to 'prepare' the app:
 
+```
 > cordova prepare
+```
 
 [image of cordova prepare cmd]
 
