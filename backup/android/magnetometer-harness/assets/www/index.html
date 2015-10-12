@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Cordova Magnetometer App</title>
+
+    <script type="text/javascript">
+        // Add cordova js
+        if (navigator.userAgent.match(/android|iphone|ipad/i)) {
+            document.write("<script src='cordova.js'><\/script>");
+        }
+    </script>
+
+    <style>
+        /* Give us some style! */
+        body {background: rgb(0%, 100%, 0%); font-family: Arial; margin: 0; padding: 0;}
+        #xyAxis {position: absolute; width: 100%; height: 100%;}
+        #wrapper {text-align: center; width: 300px; height: 170px; color: #fff; position: absolute; top:0; bottom: 0;left: 0;right: 0; margin: auto; text-shadow: 0px 0px 4px #000;}
+        #wrapper big#uT {display: block; font-size: 62pt; margin: 5px 0;}
+        #wrapper small {display: block; font-size: 20pt; }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="xyAxis"></div>
+
+    <div id="wrapper">
+        <small id="xyz"></small>
+        <big id="uT">0.0</big>
+        <small>μ(T)</small>
+    </div>
+
+<script>(function() {
+
+
+// Initialise vars _____________________________________________
+
+var uT = document.getElementById('uT');
+var xyz = document.getElementById('xyz');
+var xyAxis = document.getElementById('xyAxis');
+var lastReading = {x: 0, y: 0, z: 0, magnitude: 0};
+var watchID = 0;
+var intervalID = 0;
+
+// Helper functions __________________________________________
+
+function getBackground(val) {
+    var r = 0, g = 0, b = 0;
+    if (val < -50) b = 100;
+    else if (val < 0) b = Math.abs(val) * 2;
+    if (val > 50) r = 100;
+    else if (val > 0) r = Math.abs(val) * 2;
+    if (val > -50 && val < 50) g = 100;
+    else g = (100 - Math.abs(val)) * 2  ;
+    return 'rgb(' + r + '%, ' + g +'%, ' + b + '%)';
+}
+
+function getXYBackground(x, y) {
+    var red = 'rgba(0,0,255,1)', 
+        blue = 'rgba(255,0,0,1)', 
+        transparent = 'rgba(255,255,255,0)',
+        strength = Math.sqrt(x*x*3 + y*y*3);
+    var direction = Math.round((Math.atan2(y,x)*180 / Math.PI) + 180);
+    var range = (strength > 100) ? 50 : Math.abs(strength) / 2;
+    return '-webkit-linear-gradient(' + direction + 'deg, ' + blue + ' 0%,' + transparent + ' ' + range + '%,' + transparent + ' ' + (100 - range) + '%, ' + red + ' 100%)';
+}
+
+function displayReadings() {
+    
+    // RUN CALCULATIONS
+    var reading = lastReading;
+    var x = reading.x;
+    var y = reading.y;
+    var z = reading.z;
+    var magnitude = Math.round(reading.magnitude);
+    var magnitude100 = Math.round(reading.magnitude * 100);
+
+    // DISPLAY NUMBERS
+    uT.innerText = Math.round(magnitude100 / 100) + '.' + (magnitude100 % 100);
+    xyz.innerText = ['X: ', x, ', Y: ', y, ', Z: ', z].join('');
+
+    // BACKGROUND COLOR
+    document.body.style.background = getBackground(z);
+
+    // XY AXIS
+    xyAxis.style.background = getXYBackground(x, y);
+
+    // TOO HIGH? WARN USER WITH VIBRATION
+    if (navigator.vibrate) {
+        if (magnitude > 500) magnitude = 500; 
+        if (magnitude > 80) navigator.vibrate(Math.round(magnitude / 10));
+    }
+}
+
+// Magnetometer Actions __________________________________________
+
+function watchMagnetometer() {
+    console.log('watchMagnetometer()'); 
+    if (window.cordova && cordova.plugins && cordova.plugins.magnetometer) {
+        cordova.plugins.magnetometer.watchReadings(
+            function success (reading) {
+
+                // COLLECT READINGS
+                lastReading = {
+                    x: Math.round(reading.x),
+                    y: Math.round(reading.y),
+                    z: Math.round(reading.z),
+                    magnitude: reading.magnitude
+                };
+                
+            },
+            function error (err) {
+                console.log(err);
+            }
+        );
+        // Refresh display every 0.1 secs.
+        intervalID = window.setInterval(displayReadings, 100);
+    } else {
+        console.log('No magnetometer plugin!!');
+        console.log('cordova = ' + !!window.cordova);
+        console.log('cordova.plugins = ' + !!cordova.plugins);
+        console.log('cordova.plugins.magnetometer = ' + !!cordova.plugins.magnetometer);
+    }
+}
+
+function stop() {
+    console.log('stop()'); 
+    window.clearInterval(intervalID);
+    if (window.cordova && cordova.plugins && cordova.plugins.magnetometer)
+        cordova.plugins.magnetometer.stop();
+}
+
+// Device Event Listeners ___________________________________
+
+document.addEventListener("pause", stop, false);
+document.addEventListener("resume", watchMagnetometer, false);
+document.addEventListener("deviceready", watchMagnetometer, false)
+
+
+})();</script>
+  
+</body>
+</html>
