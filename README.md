@@ -4,12 +4,16 @@
 
 A Cordova Magnetometer app used as test harness for the [Cordova Magnetometer Plugin](https://github.com/sdesalas/cordova-plugin-magnetometer).
 
-Download:
+### Download:
 
 - [Android 1.0.0](https://github.com/sdesalas/cordova-magnetometer-app/raw/master/deploy/android/1.0.0/cordova-magnetometer-app.apk)
 - [iPhone/iPad 1.0.0 - (Use iTunes to install)](https://github.com/sdesalas/cordova-magnetometer-app/raw/master/deploy/ios/1.0.0/cordova-magnetometer-app.ipa)
 
-Features:
+### For an in-depth article:
+
+- [How to Build a Cross-Platform Metal Detector App](http://desalasworks.com/article/how-to-build-a-cross-platform-metal-detector-app-ios-android/)
+
+### Features:
 
 - XYZ Coordinate tracking and color display.
 - Magnitude meter
